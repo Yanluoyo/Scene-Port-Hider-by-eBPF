@@ -108,9 +108,9 @@ adb devices
 然后执行：
 
 ```powershell
-adb shell su -c "cp /sys/kernel/btf/vmlinux /data/local/tmp/vmlinux.btf && chmod 0644 /data/local/tmp/vmlinux.btf"
-adb pull /data/local/tmp/vmlinux.btf vmlinux.btf
-adb shell su -c "rm -f /data/local/tmp/vmlinux.btf"
+adb shell su -c "mkdir -p /storage/emulated/0/Download && cp /sys/kernel/btf/vmlinux /storage/emulated/0/Download/vmlinux.btf && chmod 0644 /storage/emulated/0/Download/vmlinux.btf"
+adb pull /storage/emulated/0/Download/vmlinux.btf vmlinux.btf
+adb shell su -c "rm -f /storage/emulated/0/Download/vmlinux.btf"
 ```
 
 注意：不要用下面这种方式导出：
